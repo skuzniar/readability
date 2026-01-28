@@ -24,11 +24,19 @@ Here is a sample session where we compute scores for one of the samples.
 ```
 python readability-calculator.py sources
 ==> ?
-h     - Print this message.
-s     - Scan for sources.
-l     - List available sources.
-#|all - Run n-th source or all.
-q     - Quit.
+h           - Print this message.
+s           - Scan for sources.
+l           - List available sources.
+#|all [xyz] - Run n-th source or all sources.
+              An optional argument can be used to only run a single readability formula:
+                  ari - Automated Readability Index
+                  fre - Flesch Reading Ease Score
+                  gfi - Gunning Fog Index
+                  fkg - Flesch-Kincaid Grade Level
+                  clr - Coleman-Liau Readability Index
+                  smo - SMOG Index
+                  olf - Original Linsear Write Formula
+q           - Quit.
 ==> l
   1 - sources/long.txt
   2 - sources/short.txt

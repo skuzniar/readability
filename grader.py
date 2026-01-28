@@ -16,11 +16,24 @@ class Grader():
         runner = Runner()
 
         def prompt():
-            print("h     - Print this message.")
-            print("s     - Scan for sources.")
-            print("l     - List available sources.")
-            print("#|all - Run n-th source or all.")
-            print("q     - Quit.")
+            print("h           - Print this message.")
+            print("s           - Scan for sources.")
+            print("l           - List available sources.")
+            print("#|all [xyz] - Run n-th source or all sources.")
+            print("              An optional argument can be used to only run a single readability formula:")
+            print("                  ari - Automated Readability Index")
+            print("                  fre - Flesch Reading Ease Score")
+            print("                  gfi - Gunning Fog Index")
+            print("                  fkg - Flesch-Kincaid Grade Level")
+            print("                  clr - Coleman-Liau Readability Index")
+            print("                  smo - SMOG Index")
+            print("                  olf - Original Linsear Write Formula")
+            print("q           - Quit.")
+
+
+
+
+
 
         while True:
             try:
@@ -42,16 +55,20 @@ class Grader():
                 continue
             if  opt == 'q':
                 break
-            if  opt == 'all':
-                for idx in range(1, loader.size() + 1):
-                    runner.run(loader.file(idx), details, verbose)
-                continue
             else:
                 try:
-                    idx = int(opt)
-                    if idx > 0 and idx <= loader.size():
-                        runner.run(loader.file(idx), details, verbose)
-                        continue
+                    opts = opt.split(' ')
+                    if opts[0] == 'all':
+                        for idx in range(1, loader.size() + 1):
+                            runner.run(loader.file(idx), '*', details, verbose)
+                    else:
+                        idx = int(opts[0])
+                        if idx > 0 and idx <= loader.size():
+                            if len(opts) > 1:
+                                runner.run(loader.file(idx), opts[1], details, verbose)
+                            else:
+                                runner.run(loader.file(idx), '*', details, verbose)
+                    continue
                 except Exception as e:
                     print("Exception occured:", e, traceback.format_exc())
                     continue
