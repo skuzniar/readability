@@ -21,13 +21,8 @@ class Grader():
             print("l           - List available sources.")
             print("#|all [xyz] - Run n-th source or all sources.")
             print("              An optional argument can be used to only run a single readability formula:")
-            print("                  ari - Automated Readability Index")
-            print("                  fre - Flesch Reading Ease Score")
-            print("                  gfi - Gunning Fog Index")
-            print("                  fkg - Flesch-Kincaid Grade Level")
-            print("                  clr - Coleman-Liau Readability Index")
-            print("                  smo - SMOG Index")
-            print("                  olf - Original Linsear Write Formula")
+            for code, description in runner.formulas():
+                print("{:>20} - {:}".format(code, description))
             print("q           - Quit.")
 
 
