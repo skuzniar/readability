@@ -1,12 +1,32 @@
 # Readability Calculator
 
-An interactive program to calculate readability scores of text samples using various formulas. To start the program run:
+An interactive program to calculate readability scores of text samples using various formulas.
+
+## Installation
+
+Install Natural Language Toolkit.
+
+```
+pip install nltk
+```
+
+Download Natural Language Toolkit packages.
+
+```
+python
+Python 3.14.2 (v3.14.2:df793163d58, Dec  5 2025, 12:18:06) [Clang 16.0.0 (clang-1600.0.26.6)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import nltk
+>>> nltk.download()
+showing info https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml
+```
+Once the download completes you can run the program. 
 
 ```
 python readability-calculator.py sources
 ```
 
-To show more details run:
+To show more details about the calculations run:
 
 ```
 python readability-calculator.py --details sources
