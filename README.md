@@ -49,6 +49,9 @@ Running [sources/long.txt]
 Coleman-Liau Readability Index Grade level =  9.96
                     SMOG Index Grade level = 11.31
       Original Linsear Write Formula score = 82.59 
+==> 2 olf
+Running [sources/short.txt]
+      Original Linsear Write Formula score = 79.75
 ==> q
 ```
 
