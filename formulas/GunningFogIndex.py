@@ -25,7 +25,7 @@ def level(text, details, verbose):
                 syllables = counter.syllables(word)
                 if verbose:
                     print("Word=[", word, "] syllables=", syllables)
-                # TODO discout ed, es suffixes
+                # TODO discount ed, es suffixes
                 if syllables >= 3:
                     ncomplexwords += 1
 
