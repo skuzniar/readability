@@ -4,6 +4,8 @@ import sys
 from formulas.AutomatedReadabilityIndex   import level as ari_level 
 from formulas.FleschReadingEaseScore      import score as fre_score
 from formulas.GunningFogIndex             import level as gfi_level
+from formulas.GunningFogIndex             import level_simple as gfi_level_s
+from formulas.GunningFogIndex             import level_fast as gfi_level_f
 from formulas.FleschKincaidGradeLevel     import level as fkg_level
 from formulas.ColemanLiauReadabilityIndex import level as clr_level
 from formulas.SMOGIndex                   import level as smo_level
@@ -12,7 +14,9 @@ from formulas.OriginalLinsearWriteFormula import score as olf_score
 formulas = [
         ("ari", ari_level, "Automated Readability Index Level"),
         ("fre", fre_score, "Flesch Reading Ease Score"),
-        ("gfi", gfi_level, "Gunning Fog Index Level"),
+        ("gfi", gfi_level,   "Gunning Fog Index Level (remove suffix only if the stem is valid)"),
+        ("gfi", gfi_level_f, "Gunning Fog Index Level (remove suffix even if the stem is invalid)"),
+        ("gfi", gfi_level_s, "Gunning Fog Index Level (no suffix removal)"),
         ("fkg", fkg_level, "Flesch-Kincaid Grade Level"),
         ("clr", clr_level, "Coleman-Liau Readability Index Level"),
         ("smo", smo_level, "SMOG Index Level"),
