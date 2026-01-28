@@ -4,13 +4,11 @@ import sys
 import utils.tokenizer as tokenizer
 
 def level(text, details, verbose):
-    nparagraphs = 0
     nsentences = 0
     nwords = 0
     ncharacters = 0
 
     paragraphs = tokenizer.paragraphs(text)
-    nparagraphs = len(paragraphs)
 
     for paragraph in paragraphs:
         sentences = tokenizer.sentences(paragraph)

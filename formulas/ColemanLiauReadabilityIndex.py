@@ -5,15 +5,11 @@ import utils.tokenizer as tokenizer
 import utils.counter   as counter
 
 def level(text, details, verbose):
-    nparagraphs = 0
     nsentences = 0
     nwords = 0
-    ncomplexwords = 0
-    nsyllables = 0
     ncharacters = 0
 
     paragraphs = tokenizer.paragraphs(text)
-    nparagraphs = len(paragraphs)
 
     for paragraph in paragraphs:
         sentences = tokenizer.sentences(paragraph)
@@ -30,14 +26,7 @@ def level(text, details, verbose):
                 if verbose:
                     print("Token=[", token, "]")
                 # Exclide non-alpha-numeric
-                #ncharacters += len(token)
                 ncharacters += sum(char.isalnum() for char in token)
-
-            for word in words:
-                syllables = counter.syllables(word)
-                if verbose:
-                    print("Word=[", word, "] syllables=", syllables)
-                nsyllables += syllables
 
     if details or verbose:
         print("Number of sentences=", nsentences)
