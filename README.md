@@ -1,5 +1,4 @@
 # Readability Calculator
-Readability formulas.
 
 An interactive program to calculate readability scores of text samples using various formulas. To start the program run:
 
