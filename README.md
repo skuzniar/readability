@@ -14,8 +14,6 @@ Download Natural Language Toolkit packages.
 
 ```
 python
-Python 3.14.2 (v3.14.2:df793163d58, Dec  5 2025, 12:18:06) [Clang 16.0.0 (clang-1600.0.26.6)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
 >>> import nltk
 >>> nltk.download()
 showing info https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml
