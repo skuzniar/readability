@@ -25,7 +25,8 @@ def level(text, details, verbose):
     nwords = 0
     ncomplexwords = 0
 
-    paragraphs = tokenizer.paragraphs(text)
+    # Compount sentences (with a semicolon or a colon) are treated as two sentences.
+    paragraphs = tokenizer.paragraphs(text.replace(';', '.').replace(':', '.'))
 
     for paragraph in paragraphs:
         sentences = tokenizer.sentences(paragraph)

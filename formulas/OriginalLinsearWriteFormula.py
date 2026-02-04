@@ -10,7 +10,7 @@ def score(text, details, verbose):
     nsimplewords = 0
     nignoredwords = 0
 
-    # Compount sentences (with a semicolon) are trated as two sentences.
+    # Compount sentences (with a semicolon) are treated as two sentences.
     paragraphs = tokenizer.paragraphs(text.replace(';', '.'))
 
     ignored = ["the", "is", "was", "are", "where"]
